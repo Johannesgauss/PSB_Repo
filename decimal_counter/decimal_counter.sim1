@@ -4,7 +4,7 @@
 
 <item itemtype="Led" CircId="Led-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-304,24" rotation="450" hflip="1" vflip="1" label="Led-3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
 
-<item itemtype="MCU" CircId="mega328-4" mainComp="false" Show_id="true" Show_Val="false" Pos="-452,-88" rotation="0" hflip="1" vflip="1" label="mega328-4" idLabPos="-10.6779,-17.4576" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" varList="R16" MainMcu="true" SerialMon="-1" />
+<item itemtype="MCU" CircId="mega328-4" mainComp="false" Show_id="true" Show_Val="false" Pos="-452,-88" rotation="0" hflip="1" vflip="1" label="mega328-4" idLabPos="-10.6779,-17.4576" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="decimal_counter/decimal_counter.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" varList="R16" MainMcu="true" SerialMon="-1" />
 
 <item itemtype="Seven Segment" CircId="Seven Segment-20" mainComp="false" Show_id="false" Show_Val="false" Pos="-312,-44" rotation="0" hflip="1" vflip="1" label="Seven Segment-20" idLabPos="20,-44" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" NumDisplays="1" Vertical_Pins="false" CommonCathode="true" Threshold="2.4 V" MaxCurrent="20 mA" Resistance="1 Ω" />
 
