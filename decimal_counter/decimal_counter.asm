@@ -1,0 +1,41 @@
+.nolist
+.include "m328Pdef.inc"
+.list
+
+.ORG 0x0000
+START:
+	LDI r16, 0xFF
+	OUT DDRB, r16
+	LDI r20, 0b00000110
+	STS 0x0100, r20
+	LDI R21, 0b00101101
+	STS 0x0101, R21
+	LDI R21, 0b01111001
+	STS 0x0102, R21
+;	MOV 0x0103, 0b
+;	MOV 0x0104, 0b
+;	MOV 0x0105, 0b
+;	MOV 0x0106, 0b
+;	MOV 0x0107, 0b
+;	MOV 0x0108, 0b
+;	MOV 0x0109, 0b
+	ST X, R20
+LOOP:
+	LD R16, X+
+	OUT PORTB, R16
+	LDS R16, 0x0101
+	;JMP DELAY
+DELAY:
+    LDI R17, 82 
+    L17:
+        LDI R18, 255
+    L18:
+        LDI R19, 255
+    L19:
+	DEC R19
+        BRNE L19
+        DEC R18
+        BRNE L18
+        DEC R17
+        BRNE L17
+	JMP LOOP
