@@ -1,0 +1,37 @@
+; pulei
+.nolist
+.include "../../m328Pdef.inc"
+
+.ORG 0x000
+
+.def AUX = R16
+.equ BUTTON_A = PD7 ; for increasing
+.equ BUTTON_B = PD6 ; for decreasing
+
+BOOT:
+	LDI AUX, 0xFF
+	OUT DDRB, AUX
+	LDI AUX, 0b00000000
+	OUT PORTB, AUX
+
+	LDI AUX, LOW(RAMEND)
+	OUT SPL, AUX
+
+	LDI AUX, HIGH(RAMEND)
+	OUT SPH, AUX
+MAIN:
+	INC AUX
+	OUT PORTB, AUX
+	RCALL DELAY
+	RCALL MAIN
+DELAY:
+    LDI R20, 50
+L3: LDI R17, 255
+L2: LDI R18, 255
+L1: DEC R18
+    BRNE L1
+    DEC R17
+    BRNE L2
+    DEC R20
+    BRNE L3
+    RET
