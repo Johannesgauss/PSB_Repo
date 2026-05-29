@@ -36,6 +36,8 @@ INIT:
     LDI AUX, LOW(RAMEND)
     OUT SPL, AUX
 
+    STS UCSR0B, R1
+
     ; Configure PORTB (Pins 0-6) as outputs for the 7-Segment Display
     LDI AUX, 0b01111111
     OUT DDRB, AUX
@@ -123,7 +125,10 @@ DONE_PREV:
 SHOW:
     ; Formula to find 1D index: Offset = (J * 2) + I
     MOV AUX, J
-    LSL AUX                 ; Multiply Row (J) by 2
+    ;LSL AUX                 ; Multiply Row (J) by 2
+    LDI R25, 2
+    MUL R25, AUX
+    MOV AUX, R0
     ADD AUX, I              ; Add Column (I) -> AUX now holds the total offset
 
     ; Load Z pointer with the Flash base memory address of Tabela
